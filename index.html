@@ -9,7 +9,48 @@
 </head>
 
 <body>
-    <h2>this is h2</h2>
+    <div class="para">this is h<span>2</span></div>
+
+    <h3 id="demo">nice hai nice</h3>
+    <!-- <button class="btn" onclick="increase()">increase</button> -->
+
+    <button class="btn">increase</button>
+
+    <script>
+        // const para = document.getElementsByClassName("para")
+
+        // const para = document.getElementById("demo")
+
+        const para = document.querySelector("#demo");
+
+        const sp = document.getElementsByTagName("span")
+
+        const btn = document.querySelector(".btn")
+        const s = sp[0]
+        console.log(sp[0].innerHTML)
+        btn.addEventListener("click", increase)
+        // console.log(para.innerText)
+        // para[0].style.color = 'red'
+
+
+        // const changeColor = (e) => {
+        //     para.style.color = "red"
+        // }
+
+        let length = 0
+        s.innerHTML = length
+        para.innerHTML = length
+        function increase() {
+            length++
+            s.innerHTML = `${length}`
+            para.innerHTML = `${length}`
+        }
+
+
+
+
+    </script>
 </body>
+
 
 </html>
