@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+            color: black;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        nav {
+            min-height: 5vh;
+            background-color: rgb(109, 53, 53);
+            color: white;
+        }
+
+        nav>ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .closeburger {
+            display: none;
+        }
+
+        .showMenu {
+            position: absolute;
+            right: 0;
+            width: 12rem;
+            height: 95vh;
+            background-color: green;
+
+            display: none;
+            opacity: .2;
+
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:600px) {
+            .li {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="logo">RP</li>
+            <li class="li">home</li>
+            <li class="li">blog</li>
+            <li class="li">contact</li>
+            <li class="  hamburger">++</li>
+            <li class="  closeburger">==</li>
+        </ul>
+    </nav>
+    <div class="showMenu">
+        <ul>
+            <li class="li">home</li>
+            <li class="li">blog</li>
+            <li class="li">contact</li>
+        </ul>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger")
+        const closeburger = document.querySelector(".closeburger")
+        const showMenu = document.querySelector(".showMenu")
+        hamburger.addEventListener("click", () => {
+            hamburger.style.display = "none"
+            closeburger.style.display = "block"
+            showMenu.style.display = "block"
+        })
+        closeburger.addEventListener("click", () => {
+            closeburger.style.display = "none"
+            hamburger.style.display = "block"
+
+            showMenu.style.display = "none"
+        })
+    </script>
+</body>
+
+</html>
